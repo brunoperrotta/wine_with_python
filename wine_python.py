@@ -5,7 +5,7 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 
 # table import
-valor_import = pd.read_excel('https://github.com/brunoperrotta/wine_with_python/raw/49da611a630d53413dcdbd42cc9b32a81e9a5026/import.xlsx')
+valor_import = pd.read_excel('https://raw.githubusercontent.com/brunoperrotta/wine_with_python/main/import.xlsx')
 
 # droping id column
 valor_import = valor_import.drop(columns='Id')
