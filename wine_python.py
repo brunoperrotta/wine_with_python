@@ -86,7 +86,7 @@ fig_top5.update_layout(
     title='Evolution of Top 5 Table Wine Exporters to Brazil from 1999 to 2022',
     xaxis_title='Year',
     yaxis_title='US$',
-    legend_title='Países'
+    legend_title='Countries'
 )
 fig_top5.update_yaxes(dtick=15000000)
 fig_top5.update_layout(width=1200,  height=460)
