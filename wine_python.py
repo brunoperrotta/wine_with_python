@@ -70,7 +70,7 @@ with row1[1]:
 filtro_ano_top5 = top5[(top5['Year'] >= 1999) & (top5['Year'] <= 2022)]
 
 fig_top5 = px.scatter(filtro_ano_top5, x='Year', y='Valor(US$)',
-                 size='Valor(US$)', color='País',
+                 color='País',
                  hover_name='País', log_x=True, size_max=60, animation_frame='Year',
                   color_discrete_map={
                      'Chile': 'darkred',      
