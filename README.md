@@ -2,7 +2,7 @@
 
 # [Wine with Python](https://brunoperrotta-wine-with-python-wine-python-upo12n.streamlit.app/)
 
-Sharing my latest project! I explored the incredible possibilities of the Python library called Streamlit. This tool allows the transformation of a simple data script into an interactive web application, all with just Python.
+I explored the incredible possibilities of the Python library called Streamlit. This tool allows the transformation of a simple data script into an interactive web application, all with just Python.
 
 The project titled "Analysis of Brazilian Table Wine Imports" delves into the intricate economic landscape of wine import trends in Brazil, covering the period from 1970 to 2022. By examining the accumulated value of the top five wine exporters to Brazil during this period, the study reveals a significant increase in import volume and the rise of key leaders in table wines in the 1990s, coinciding with Brazil's economic liberalization and the creation of Mercosur. This suggests that dynamic patterns shape consumption preferences, constantly evolving in this category in our country.
 
