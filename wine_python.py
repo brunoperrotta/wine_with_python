@@ -76,7 +76,7 @@ fig_top5 = px.scatter(filtro_ano_top5, x='Year', y='Valor(US$)',
                      'Chile': 'darkred',      
                      'Argentina': 'lightblue', 
                      'Portugal': 'darkgreen',  
-                     'Itália': 'blue',      
+                     'Itália': 'darkblue',      
                      'França': 'pink'        
                  },
                   range_x=[1999, 2023], range_y=[0, 250000000])
