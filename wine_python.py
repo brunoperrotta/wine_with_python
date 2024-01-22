@@ -11,21 +11,21 @@ valor_import = pd.read_excel('https://raw.githubusercontent.com/brunoperrotta/wi
 valor_import = valor_import.drop(columns='Id')
 
 # rerranging the columns 
-vl_melted = valor_import.melt(id_vars=['País'], var_name='Ano', value_name='Valor(US$)')
-valor = vl_melted[['Ano', 'País', 'Valor(US$)']]
-valor['Ano'] = pd.to_datetime(valor['Ano'], format='%Y')
-valor['Ano'] = valor['Ano'].dt.year
+vl_melted = valor_import.melt(id_vars=['País'], var_name='Year', value_name='Valor(US$)')
+valor = vl_melted[['Year', 'País', 'Valor(US$)']]
+valor['Year'] = pd.to_datetime(valor['Year'], format='%Y')
+valor['Year'] = valor['Year'].dt.year
 
 
 # grouping by year
-valor_anual = valor.groupby(['Ano'])['Valor(US$)'].sum().reset_index()
-valor_anual['Ano'] = pd.to_datetime(valor_anual['Ano'], format='%Y')
-valor_anual['Ano'] = valor_anual['Ano'].dt.year
+valor_anual = valor.groupby(['Year'])['Valor(US$)'].sum().reset_index()
+valor_anual['Year'] = pd.to_datetime(valor_anual['Year'], format='%Y')
+valor_anual['Year'] = valor_anual['Year'].dt.year
 
 # function to get top 5 countries per year
 def top_countries_by_year(df):
     top_countries = (
-        df.groupby('Ano')
+        df.groupby('Year')
         .apply(lambda x: x.nlargest(5, 'Valor(US$)'))
         .reset_index(drop=True)
     )
@@ -56,9 +56,9 @@ with row1[0]:
      st.write(fig_group5_total)
 
 # column 2
-fig_vl_anual = px.line(valor_anual, x="Ano", y='Valor(US$)', color_discrete_sequence=px.colors.sequential.RdBu,
+fig_vl_anual = px.line(valor_anual, x="Year", y='Valor(US$)', color_discrete_sequence=px.colors.sequential.RdBu,
                        title='Annual Brazilian Import of Table Wine from 1970 to 2022',
-                      labels={'Ano': 'Year', 'Valor(US$)': 'US$'})
+                      labels={'Year': 'Year', 'Valor(US$)': 'US$'})
 fig_vl_anual.update_xaxes(dtick=2)
 fig_vl_anual.update_yaxes(dtick=50000000)
 fig_vl_anual.update_layout(width=600,  height=460)
@@ -67,11 +67,11 @@ with row1[1]:
 
 
 # column 3
-filtro_ano_top5 = top5[(top5['Ano'] >= 1999) & (top5['Ano'] <= 2022)]
+filtro_ano_top5 = top5[(top5['Year'] >= 1999) & (top5['Year'] <= 2022)]
 
 fig_top5 = px.scatter(filtro_ano_top5, x='Ano', y='Valor(US$)',
                  size='Valor(US$)', color='País',
-                 hover_name='País', log_x=True, size_max=60, animation_frame='Ano',
+                 hover_name='País', log_x=True, size_max=60, animation_frame='Year',
                   color_discrete_map={
                      'Chile': 'darkred',      
                      'Argentina': 'lightblue', 
