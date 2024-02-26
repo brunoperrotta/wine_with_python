@@ -90,7 +90,7 @@ fig_top5.update_layout(
     legend_title='Countries'
 )
 fig_top5.update_yaxes(dtick=15000000)
-fig_top5.update_layout(width=1400,  height=460)
+fig_top5.update_layout(width=1800,  height=460)
 fig_top5.update_traces(marker=dict(opacity=1))  # Definindo opacidade para 1 (sem transparência)
 
 with row2[0]:
